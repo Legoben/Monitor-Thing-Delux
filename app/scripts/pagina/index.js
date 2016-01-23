@@ -10,8 +10,8 @@ var IndexPage = React.createClass({
 		return (
 			<div className="route-index">
 				<div className="banner-container">
-					<video autoPlay muted loop className="banner-video" poster="/images/banner_video_poster.jpg">
-						<source src="/banner_video.mp4" type="video/mp4" />
+					<video autoPlay muted loop className="banner-video" poster="images/banner_video_poster.jpg">
+						<source src="banner_video.mp4" type="video/mp4" />
 						Your browser does not support the video tag.
 					</video>
 
