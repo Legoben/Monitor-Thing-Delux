@@ -154,16 +154,6 @@ gulp.task('extras', function() {
 
 // Watch
 gulp.task('watch', ['html', 'fonts', 'bundle'], function() {
-	// browserSync({
-	// 	notify: false,
-	// 	logPrefix: 'BS',
-	// 	// Run as an https by uncommenting 'https: true'
-	// 	// Note: this uses an unsigned certificate which on first access
-	// 	//       will present a certificate warning in the browser.
-	// 	// https: true,
-	// 	server: ['robbr-phonegap/www/', 'app']
-	// });
-
 	// Watch .json files
 	gulp.watch('app/scripts/**/*.json', ['json']);
 
