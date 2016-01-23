@@ -1,0 +1,99 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+ html {
+    position: relative;
+    min-height: 100%;
+ }
+
+ body {
+    background-color: lightgrey;
+    margin: 0 0 100px;
+ }
+
+.section {
+    position: absolute;
+    top: 50%;
+    margin-top: -200px;
+    left: 0;
+    width: 100%;
+}
+
+.container {
+    max-width: 46em;
+}
+
+.orange-text {
+    margin-top: -10px;
+}
+
+.header-intro {
+    display: table-row;
+    line-height: 1.5em;
+    font-size: 2em;
+    white-space: nowrap;
+    margin-bottom: 2em;
+}
+
+.header-intro p {
+    font-size: inherit;
+    overflow: hidden;
+    display: table-cell;
+    vertical-align: middle;
+    padding-bottom: 30px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+#submit-button {
+    min-width: 250px;
+    width: 250px;
+    margin: 4px 2px;
+}
+
+span.spacer {
+    display: table-cell;
+    width: 50%;
+}
+
+span.spacer:first-child {
+    padding: 0 30px 30px 0;
+}
+
+span.spacer:last-child {
+    padding: 0 0 30px 30px;
+}
+
+span.spacer:after {
+    display: inline-block;
+    width: 100%;
+    content: ".";
+    font-size: 0;
+    color: transparent;
+    height: 3px;
+    background: #fff;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 85px;
+    width: 100%;
+}
+
+.icon-block {
+   padding: 0 15px;
+}
+.icon-block .material-icons {
+   font-size: inherit;
+}
