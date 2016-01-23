@@ -28,8 +28,11 @@
     width: 800px;
 }
 
-.rating {
+.atm-amount {
+    color: green;
     text-align: center;
+    font-size: 24px;
+    font-weight: 500;
 }
 
 .user-review-name {
