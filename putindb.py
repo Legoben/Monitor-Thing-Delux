@@ -12,15 +12,15 @@ db = client.get_default_database()
 
 j = {
     "geocode": {
-        "lat": 39.95224136745237,
-        "lng": -75.19157230854034
+        "lat": 39.94798093816873,
+        "lng": 75.19071400165558
     },
     "id": str(uuid.uuid1()),
     "amount_left": random.randint(50000, 500000),
-    "name": "Penn Engineering ATM"
+    "name": "Penn Tower Parking Garage ATM"
 }
 
-j['latlon'] = [j['geocode']['lat'], j['geocode']['lng']]\
+j['latlon'] = [j['geocode']['lat'], j['geocode']['lng']]
 
 print(j)
 

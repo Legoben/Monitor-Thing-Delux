@@ -27,6 +27,7 @@
         var markers;
         var directionsService;
         var directionsDisplay;
+        var images;
 
         function round(n) {
             return Math.round(n * 1000) / 1000
@@ -49,7 +50,7 @@
                 map: map
             });
         }
-
+        
         function getLocation() {
             navigator.geolocation.getCurrentPosition(function(loc) {
                 console.log(loc);
@@ -74,9 +75,11 @@
                 data: {
                     "data": JSON.stringify(j)
                 },
-                success: function(json) {
+                success: function(r) {
                     //Do things with the data
+                    var json = r.obj
                     console.log(json);
+                    
                     if (json.length == 0) {
                         alert("No ATMs FOUND!")
                         return;
@@ -93,12 +96,15 @@
                         wps.push({
                             "stopover": true,
                             "location": json[i].geocode})
+                        
+                        getStreetView(json[i].latlon)
                     }
                     
                     
                     var request = {
                         origin: {"lat": latlon[0], "lng": latlon[1]},
-                        destination: {"lat": latlon[0], "lng": latlon[1]},
+                        /*destination: {"lat": latlon[0], "lng": latlon[1]},*/
+                        destination: r['ap'],
                         travelMode: google.maps.TravelMode.DRIVING,
                         waypoints: wps,
                         optimizeWaypoints: true,
@@ -113,6 +119,12 @@
                     });
                 }
             })
+        }
+        
+        function getStreetView(latlng){
+            var url = "https://maps.googleapis.com/maps/api/streetview?size=2000x2000&location="+latlng[0]+","+latlng[1]+"&fov=90&key=AIzaSyD61mHJfiQ6Nu9YJsOvfNRwJ1J98Xjl0Ts"
+            console.log(url)
+            //images.push(url);
         }
 
     </script>
