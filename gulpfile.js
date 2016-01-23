@@ -120,7 +120,7 @@ gulp.task('buildBundle', ['styles', 'buildScripts', 'moveLibraries', 'bower'], f
 		.pipe($.useref.restore())
 		.pipe($.useref())
 		.pipe(gulp.dest('robbr-phonegap/www/'));
-});
+}); 
 
 // Move JS Files and Libraries
 gulp.task('moveLibraries',['clean'], function(){
