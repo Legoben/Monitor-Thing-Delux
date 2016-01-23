@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #map {
+            height: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        var map;
+        var points;
+        var markers;
+        
+        function round(n){
+            return Math.round( n * 1000) / 1000
+        }
+
+        function initMap(latlon) {
+            
+            console.log("HERE", latlon)
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: latlon[0],
+                    lng: latlon[1]
+                },
+                zoom: 12
+            });
+        }
+        
+        function getLocation(){
+            navigator.geolocation.getCurrentPosition(function(loc){
+                console.log(loc);
+                var latlon = [round(loc.coords.latitude), round(loc.coords.longitude)]
+                latlon = [38.9283, -77.1753]
+                initMap(latlon)
+                getWaypoints(latlon)
+            });
+            
+        }
+
+        function getWaypoints(latlon) {
+            var j = {"lat":latlon[0], "lng":latlon[1], "event":"getatmdata"}
+            
+            $.ajax({
+                url: "https://pennapps.ngrok.io/command",
+                method: "POST",
+                data: {
+                    "data": JSON.stringify(j)
+                },
+                success: function(json) {
+                    //Do things with the data
+                    console.log(json);
+                    if(json.length == 0){
+                        alert("No ATMs FOUND!")
+                        return;
+                    }
+                    
+                    for(var i = 0; i < json.length; i++){
+                        var marker = new google.maps.Marker({position: json[i].geocode, map: map, title: json[i].name});   
+                    }
+                    
+                }
+           
+            });
+        }
+        
+        function genRandomWaypoints(latlon){
+            
+        }
+
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD61mHJfiQ6Nu9YJsOvfNRwJ1J98Xjl0Ts&callback=getLocation">
+
+
+    </script>
+</body>
+
+</html>
