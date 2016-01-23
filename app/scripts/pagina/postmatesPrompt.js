@@ -8,8 +8,12 @@ var Link = require('react-router').Link
 var PostmatesList = React.createClass({
 	render: function() {
 		return (
-			<div>
-				<h3>¿¿¿ Need Tools ???</h3>
+			<div className="container">
+				<div className="row">
+					<div className="col s12">
+						<h3>¿¿¿ Need Tools ???</h3>
+					</div>
+				</div>
 			</div>
 		);
 	}

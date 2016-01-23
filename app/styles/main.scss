@@ -7,7 +7,32 @@ $secondary-color: #3949ab /*color("indigo", "darken-1")*/;
 
 @import "materialize/sass/materialize";
 
-/* custom styles */
+/* sticky footer */
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+/* custom styles for main page */
+nav, div.navbar-fixed {
+	height: $navbar-height-mobile + 10px;
+}
+
+nav {
+	padding-top: 10pt;
+}
+
+@media #{$medium-and-up} {
+	nav, div.navbar-fixed {
+		height: $navbar-height + 10px;
+	}
+}
+
 .loading {
 	.spinny-fucker {
 		text-align: center;
