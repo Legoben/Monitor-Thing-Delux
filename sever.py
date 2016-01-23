@@ -2,6 +2,7 @@ from tornado import web, ioloop, options
 import json
 import requests
 import pymongo
+import random
 
 conf = json.loads(open("conf.json").read())
 
@@ -16,6 +17,18 @@ print("Connected")
 
 
 class MainHandler(web.RequestHandler):
+    def getAirport(self, latlon):
+        url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key="+conf['maps_api']+"&location="+latlon+\
+              "&rankby=distance&keyword=airport?"
+        print(url)
+
+        resp = requests.get(url).json()['results'][0]['geometry']['location']
+        print(resp)
+        return resp
+
+
+
+
     def post(self, *args, **kwargs):
         self.set_header("Content-Type", "application/json")
 
@@ -31,6 +44,9 @@ class MainHandler(web.RequestHandler):
 
             print(lat, lng)
 
+
+            ap = self.getAirport(str(lat)+","+str(lng))
+
             intervals = [1, 2, 5, 10, 20, 50, 100]
 
             #url = "http://api.reimaginebanking.com/atms?lat={}&lng={}&rad=20&key={}".format(str(lat), str(lng), api_key)
@@ -38,7 +54,7 @@ class MainHandler(web.RequestHandler):
             #print(resp)
             #resp = resp['data']
 
-            res = db.newatms.find({"latlon": {"$within": {"$center": [[lat, lng], 0.065]}}})
+            res = db.newatms.find({"latlon": {"$within": {"$center": [[lat, lng], 0.08]}}})
 
             obj = []
             for atm in res:
@@ -49,7 +65,9 @@ class MainHandler(web.RequestHandler):
                     atm['reviews'].append({"rating":r['rating'], "comment":r["comment"]})
                 obj.append(atm)
 
-            self.write(json.dumps(obj[:6]))
+            print(obj)
+            random.shuffle(obj)
+            self.write(json.dumps({"obj":obj[:6], "ap":ap}))
 
         elif j['event'] == "submitreview":
             #sent: comment, rating, atm_id
