@@ -7,17 +7,6 @@ $secondary-color: #3949ab /*color("indigo", "darken-1")*/;
 
 @import "materialize/sass/materialize";
 
-/* sticky footer */
-body {
-	display: flex;
-	min-height: 100vh;
-	flex-direction: column;
-}
-
-main {
-	flex: 1 0 auto;
-}
-
 /* custom styles for main page */
 nav, div.navbar-fixed {
 	height: $navbar-height-mobile + 10px;
