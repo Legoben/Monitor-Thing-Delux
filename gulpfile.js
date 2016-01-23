@@ -24,7 +24,7 @@ gulp.task('moveCss',['clean'], function(){
 	// the base option sets the relative root for the set of files,
 	// preserving the folder structure
 	gulp.src(['./app/styles/**/*.css'], { base: './app/styles/' })
-	.pipe(gulp.dest('robbr-phonegap/www/styles'));
+	.pipe(gulp.dest('robbr-phonegap/www/styles/'));
 });
 
 gulp.task('sass', function() {
@@ -34,7 +34,7 @@ gulp.task('sass', function() {
 			loadPath: ['app/bower_components']
 		})
 		.pipe($.autoprefixer('last 1 version'))
-		.pipe(gulp.dest('robbr-phonegap/www/styles'))
+		.pipe(gulp.dest('robbr-phonegap/www/styles/'))
 		.pipe($.size());
 });
 
@@ -68,7 +68,7 @@ gulp.task('buildScripts', function() {
 	return browserify(sourceFile)
 		.bundle()
 		.pipe(source(destFileName))
-		.pipe(gulp.dest('robbr-phonegap/www/scripts'));
+		.pipe(gulp.dest('robbr-phonegap/www/scripts/'));
 });
 
 // HTML
@@ -87,7 +87,7 @@ gulp.task('images', function() {
 			progressive: true,
 			interlaced: true
 		})))
-		.pipe(gulp.dest('robbr-phonegap/www/images'))
+		.pipe(gulp.dest('robbr-phonegap/www/images/'))
 		.pipe($.size());
 });
 
@@ -96,13 +96,13 @@ gulp.task('fonts', function() {
 	return gulp.src(require('main-bower-files')({
 			filter: '**/*.{eot,svg,ttf,woff,woff2}'
 		}).concat('app/fonts/**/*'))
-		.pipe(gulp.dest('robbr-phonegap/www/fonts'));
+		.pipe(gulp.dest('robbr-phonegap/www/fonts/'));
 });
 
 // Clean
 gulp.task('clean', function(cb) {
 	$.cache.clearAll();
-	cb(del.sync(['robbr-phonegap/www/styles', 'robbr-phonegap/www/scripts', 'robbr-phonegap/www/images']));
+	cb(del.sync(['robbr-phonegap/www/styles/', 'robbr-phonegap/www/scripts/', 'robbr-phonegap/www/images/']));
 });
 
 // Bundle
@@ -127,7 +127,7 @@ gulp.task('moveLibraries',['clean'], function(){
   // the base option sets the relative root for the set of files,
   // preserving the folder structure
   gulp.src(['./app/scripts/**/*.js'], { base: './app/scripts/' })
-  .pipe(gulp.dest('robbr-phonegap/www/scripts'));
+  .pipe(gulp.dest('robbr-phonegap/www/scripts/'));
 });
 
 // Bower helper
@@ -136,7 +136,6 @@ gulp.task('bower', function() {
 			base: 'app/bower_components'
 		})
 		.pipe(gulp.dest('robbr-phonegap/www/bower_components/'));
-
 });
 
 gulp.task('json', function() {
@@ -155,16 +154,6 @@ gulp.task('extras', function() {
 
 // Watch
 gulp.task('watch', ['html', 'fonts', 'bundle'], function() {
-	// browserSync({
-	// 	notify: false,
-	// 	logPrefix: 'BS',
-	// 	// Run as an https by uncommenting 'https: true'
-	// 	// Note: this uses an unsigned certificate which on first access
-	// 	//       will present a certificate warning in the browser.
-	// 	// https: true,
-	// 	server: ['robbr-phonegap/www/', 'app']
-	// });
-
 	// Watch .json files
 	gulp.watch('app/scripts/**/*.json', ['json']);
 
@@ -181,7 +170,7 @@ gulp.task('build', ['html', 'buildBundle', 'images', 'fonts', 'extras'], functio
 	gulp.src('robbr-phonegap/www/scripts/app.js')
 		.pipe($.uglify())
 		.pipe($.stripDebug())
-		.pipe(gulp.dest('robbr-phonegap/www/scripts'));
+		.pipe(gulp.dest('robbr-phonegap/www/scripts/'));
 });
 
 // Default task

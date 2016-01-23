@@ -14,65 +14,84 @@
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
 
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="styles/main.css">
 		
 	</head>
 	<body>
-		<div class="container">
-			<div class="header">
-				<ul class="nav nav-pills pull-right">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-				<h3 class="text-muted">${PUT_APP_NAME_HERE}</h3>
-			</div>
+		<div class="navbar-fixed">
+			<nav role="navigation">
+				<div class="nav-wrapper container">
+					<a href="#" class="brand-logo">THIS IS A FUCKING NAME</a>
 
-			<div class="jumbotron" id="app">
-				<h1>'Allo, 'Allo!</h1>
-				<p class="lead">Always a pleasure scaffolding your apps.</p>
-				<p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
-			</div>
+					<ul class="right">
+						<li><a href="#">Navbar Link</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
 
-			<div id="content" class="row marketing">
-				<div class="col-lg-6">
-					<h4>HTML5 Boilerplate</h4>
-					<p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
+		<!-- shit goes here -->
+		<main id="app-container">
+			<div class="container loading">
+				<div class="row">
+					<div class="col s6 offset-s3">
+						<h4>It is loading, you impatient fuck</h4>
 
-					<h4>Sass with Compass</h4>
-					<p>Compass is an open-source CSS Authoring Framework that uses Sass.</p>
-					
-					<h4>jQuery</h4>
-					<p>The Write Less, Do More, JavaScript Library.</p>
+						<div class="spinny-fucker">
+							<div class="preloader-wrapper big active">
+								<div class="spinner-layer spinner-blue-only">
+									<div class="circle-clipper left">
+										<div class="circle"></div>
+									</div>
+									<div class="gap-patch">
+										<div class="circle"></div>
+									</div>
+									<div class="circle-clipper right">
+										<div class="circle"></div>
+									</div>
+								</div>
+							</div>
+		  				</div>
+		  			</div>
+	  			</div>
+	  		</div>
+		</main>
 
-					<h4>Bootstrap</h4>
-					<p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
+		<!-- global footer -->
+		<footer class="page-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col l9 s7">
+						<h5 class="white-text">Potentially Important Disclaimer™</h5>
+						<p class="white-text">this is disclaimer go fuck yourself pls</p>
+					</div>
+					<div class="col l3 s5">
+						<h5 class="white-text">Fuck off, asshole!</h5>
+						<ul>
+							<li><a class="white-text" href="https://github.com/Legoben/Monitor-Thing-Delux">See this shit on Github</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 
-			<div class="footer">
-				<p>ayyy, lmao</p>
+			<div class="footer-copyright">
+				<div class="container">
+				this is a legitimate avocado pls don't steal // <em>DICKS 545,646.984 DAN</em>
+				</div>
 			</div>
-		</div>
+		</footer>
+
+		<!-- PhoneGap shit -->
 		<script type="text/javascript" src="cordova.js"></script>
 		
-
 		<!-- build:js scripts/vendor.js -->
 		<!-- bower:js -->
 		<script src="bower_components/jquery/dist/jquery.js"></script>
-		<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.min.js"></script>
+		<script src="bower_components/materialize/dist/js/materialize.js"></script>
 		
 		<!-- endbower -->
 		<!-- endbuild -->
 		<script src="scripts/app.js"></script>
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-			e.src='//www.google-analytics.com/analytics.js';
-			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-			ga('create','UA-XXXXX-X');ga('send','pageview');
-		</script>
 	</body>
 </html>

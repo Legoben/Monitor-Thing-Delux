@@ -54,7 +54,7 @@
             navigator.geolocation.getCurrentPosition(function(loc) {
                 console.log(loc);
                 var latlon = [round(loc.coords.latitude), round(loc.coords.longitude)]
-                latlon = [38.9283, -77.1753]
+                //latlon = [38.9283, -77.1753]
                 initMap(latlon)
                 getWaypoints(latlon)
             });

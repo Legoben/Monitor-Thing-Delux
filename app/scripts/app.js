@@ -2,7 +2,7 @@ var React = window.React = require('react'),
 	ReactDOM = require("react-dom");
 
 // node in ui where the communism is cadsgfakl;k;
-var theThingHolderMajig = $("#app")[0];
+var theThingHolderMajig = $("#app-container")[0];
 
 // import various paginas
 var IndexPagina = require("./pagina/index");
