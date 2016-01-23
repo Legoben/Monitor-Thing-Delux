@@ -7,7 +7,7 @@ $secondary-color: #3949ab /*color("indigo", "darken-1")*/;
 
 @import "materialize/sass/materialize";
 
-/* custom styles for main page */
+/* custom styles for all pages */
 nav, div.navbar-fixed {
 	height: $navbar-height-mobile + 10px;
 }
@@ -25,5 +25,92 @@ nav {
 .loading {
 	.spinny-fucker {
 		text-align: center;
+	}
+}
+
+html, body {
+	margin: 0; 
+	height: 100%; 
+	overflow: hidden;
+}
+
+main {
+	height: 100%;
+}
+
+/* custom styling for main page */
+div.route-index {
+	height: 100%;
+
+	.banner-container {
+		/*border: 2px solid black;*/
+		position: relative;
+		
+		height: 100%;
+
+		background-color: #282828;
+		overflow: hidden;
+	}
+
+	.banner-video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 1;
+		transform: translate(-50%, -50%);
+		
+		height: 100% !important;
+		width: auto !important;
+	}
+
+	.banner-content {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 2;
+		padding: 80px 20px;
+		text-align: center;
+
+		.banner-buttons {
+			a:first-child {
+				margin-right: 1.66rem;
+			}
+		}
+	}
+
+	h1 {
+		text-shadow: 0px 0px 50px #333;
+
+		font-weight: 700;
+	}
+
+	@media all and (min-width: 360px) {
+	}
+
+	@media #{$small-and-down} {
+		.banner-content {
+			padding: 160px 20px;
+
+			.banner-buttons {
+				a:first-child {
+					margin-right: 0px !important;
+					margin-bottom: 1.66rem;
+				}
+			}
+		}
+	}
+
+	@media all and (min-width: 600px) {
+		.banner-content {
+			padding: 160px 20px;
+		}
+	}
+
+	@media all and (min-width: 1024px) {
+		.banner-content {
+			padding: 200px 20px;
+		}
 	}
 }

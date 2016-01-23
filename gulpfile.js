@@ -147,10 +147,12 @@ gulp.task('json', function() {
 
 // Robots.txt and favicon.ico
 gulp.task('extras', function() {
-	return gulp.src(['app/*.txt', 'app/*.ico'])
+	return gulp.src(['app/*.txt', 'app/*.ico', 'app/content/*'])
 		.pipe(gulp.dest('robbr-phonegap/www/'))
 		.pipe($.size());
 });
+
+// copy contents
 
 // Watch
 gulp.task('watch', ['html', 'fonts', 'bundle'], function() {
