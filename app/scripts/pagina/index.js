@@ -5,14 +5,14 @@ var React = require('react');
 var Link = require('react-router').Link
 
 // create the things
-var TodoApp = React.createClass({
+var IndexPage = React.createClass({
 	render: function() {
 		return (
 			<div className="container">
 				<div className="row">
 					<div className="col s12">
-						<h3>arses</h3>
-						
+						<h3>hello please</h3>
+						<p>lmao</p>						
 					</div>
 				</div>
 			</div>
@@ -20,4 +20,4 @@ var TodoApp = React.createClass({
 	}
 });
 
-module.exports = TodoApp;
+module.exports = IndexPage;

@@ -6,6 +6,14 @@ var Link = require('react-router').Link
 
 // create the things
 var ATMList = React.createClass({
+	getInitialState: function() {
+		return {
+			atms: [{
+				
+			}]
+		};
+	},
+
 	render: function() {
 		return (
 			<div className="container">
