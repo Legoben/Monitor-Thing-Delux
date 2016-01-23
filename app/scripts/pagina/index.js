@@ -19,8 +19,8 @@ var IndexPage = React.createClass({
 						<h1 className="header center">Let's go "sightseeing"</h1>
 
 						<div className="banner-buttons">
-							<a href="http://materializecss.com/getting-started.html" className="btn-large waves-effect waves-light orange">Use Current Location</a>
-							<Link to="/select-location/map" className="btn-large waves-effect">Select Location</Link>
+							<Link to="/select-location/" className="btn-large waves-effect">Use Current Location</Link>
+							<Link to="/select-location-map" className="btn-large waves-effect">Select Location</Link>
 						</div>
 					</div>
 				</div>

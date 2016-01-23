@@ -24,9 +24,8 @@ ReactDOM.render((
 	<Router history={browserHistory}>
 		<Route path="/" component={IndexPagina} />
 
-		<Route path="/select-location" component={SelectLocation}>
-			<Route path="/select-location/map" component={SelectLocationOnMap} />
-		</Route>
+		<Route path="/select-location" component={SelectLocation} />
+		<Route path="/select-location-map" component={SelectLocationOnMap} />
 
 		<Route path="/atms" component={ListATMs}>
 			<Route path="/atm/:atmId" component={ATMDetail} />
