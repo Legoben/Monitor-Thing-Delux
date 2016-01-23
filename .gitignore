@@ -1,1 +1,6 @@
-robbr-phonegap/platforms/*robbr-phonegap/www/dist/.sass-cache/node_modules/
+robbr-phonegap/platforms/*
+robbr-phonegap/www/
+dist/
+.sass-cache/
+node_modules/
+.sass-cache
