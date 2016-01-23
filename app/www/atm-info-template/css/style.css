@@ -1,0 +1,59 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+ html {
+    position: relative;
+    min-height: 100%;
+ }
+
+ body {
+    background-color: lightgrey;
+    margin: 0 0 100px;
+ }
+
+.section {
+    display: table-row;
+    /*
+    position: absolute;
+    top: 50%;
+    margin-top: -200px;
+    left: 0;
+    */
+    margin: 0 auto;
+    width: 800px;
+}
+
+.rating {
+    text-align: center;
+}
+
+.user-review-name {
+    font-style: italic;
+}
+
+.user-review-content,
+.user-review-rating {
+    text-align: right;
+}
+
+.card {
+    display:block;
+    z-index: 100;
+}
+
+.card-image {
+    width: 450px;
+    height: auto;
+}
+
+.icon-block {
+   padding: 0 15px;
+}
+.icon-block .material-icons {
+   font-size: inherit;
+}

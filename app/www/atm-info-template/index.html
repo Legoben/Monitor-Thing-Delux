@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<!--
+    HTML > HEAD tags should be rendered unnecessary if dependencies are injected, which should be through gulp's 'inject.js' file. Same with <scripts> that succeed the footer tag.
+-->
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Swipr</a>
+    </div>
+  </nav>
+
+  <div class="section no-pad-bot" id="index-banner">
+
+        <div class="card hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="images/defaultATM.jpg">
+            </div>
+            <div class="card-content">
+                <div class="rating">
+                    <img src="images/star.svg" alt="Star 1">
+                    <img src="images/star.svg" alt="Star 2">
+                    <img src="images/star.svg" alt="Star 3">
+                    <img src="images/star-half.svg" alt="Star 4">
+                    <img src="images/star-outline.svg" alt="Star 5">
+                </div>
+                <span class="card-title activator grey-text text-darken-4">
+                    <span class="atm-name">Navy Federal ATM</span>
+                    <i class="material-icons right">more_vert</i>
+                </span>
+                <p>
+                    <a href="#">Write a review</a>
+                </p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">
+                    <span class="review-title">Reviews</span>
+                    <i class="material-icons right">close</i>
+                </span>
+
+                <table class="user-reviews" border="0">
+                    <div class="review">
+                        <tr>
+                            <td class="user-review-name">Anonymous</td>
+                            <td class="user-review-rating">
+                                <img src="images/star-half.svg" alt="Star 1">
+                                <img src="images/star-outline.svg" alt="Star 2">
+                                <img src="images/star-outline.svg" alt="Star 3">
+                                <img src="images/star-outline.svg" alt="Star 4">
+                                <img src="images/star-outline.svg" alt="Star 5">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="user-review-content">"I got arrested."</td>
+                        </tr>
+                    </div>
+                    <div class="review">
+                        <tr>
+                            <td class="user-review-name">Anonymous</td>
+                            <td class="user-review-rating">
+                                <img src="images/star.svg" alt="Star 1">
+                                <img src="images/star.svg" alt="Star 2">
+                                <img src="images/star.svg" alt="Star 3">
+                                <img src="images/star.svg" alt="Star 4">
+                                <img src="images/star.svg" alt="Star 5">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="user-review-content">"I got rich."</td>
+                        </tr>
+                    </div>
+                    <div class="review">
+                        <tr>
+                            <td class="user-review-name">Anonymous</td>
+                            <td class="user-review-rating">
+                                <img src="images/star.svg" alt="Star 1">
+                                <img src="images/star.svg" alt="Star 2">
+                                <img src="images/star-half.svg" alt="Star 3">
+                                <img src="images/star-outline.svg" alt="Star 4">
+                                <img src="images/star-outline.svg" alt="Star 5">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="user-review-content">"My friend got arrested. I got away."</td>
+                        </tr>
+                    </div>
+                </table>
+            </div>
+        </div>
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
