@@ -1,0 +1,83 @@
+
+
+.banner_container{
+    /*border: 2px solid black;*/
+    position: relative;
+    margin-top:50px;
+    margin: 0 0 20px 0;
+    height: 100vh;
+    background-color: #282828;
+    overflow: hidden;
+}
+
+#banner_video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    width: 600px;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
+#banner_content{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#banner-h1{
+    text-shadow:5px 5px 50px #4d4d4d;
+}
+
+@media all and (min-width: 360px) {
+    #banner_container {
+    height: 480px;
+  }
+
+  #banner_video {
+    width: 1600px;
+  }
+
+  #banner_content {
+    padding: 160px 20px;
+  }
+}
+
+@media all and (min-width: 600px) {
+  #banner_container {
+    height: 480px;
+  }
+
+  #banner_video {
+    width: 1600px;
+  }
+
+  #banner_content {
+    padding: 160px 20px;
+  }
+}
+@media all and (min-width: 1024px) {
+  #banner_container {
+    height: 600px;
+  }
+
+  #banner_video {
+    width: 1600px;
+  }
+
+  #banner_content {
+    padding: 200px 20px;
+  }
+}
+
+footer{
+    height:100px;
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}

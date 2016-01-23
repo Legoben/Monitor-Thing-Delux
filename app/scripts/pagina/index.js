@@ -1,46 +1,32 @@
 // import all the shit
 'use strict';
 var React = require('react');
-var Timer = require("../ui/Timer");
 
 var Link = require('react-router').Link
 
 // create the things
-var TodoList = React.createClass({
-	render: function() {
-		var createItem = function(itemText) {
-			return <li>{itemText}</li>;
-		};
-		return <ul>{this.props.items.map(createItem)}</ul>;
-	}
-});
-
-var TodoApp = React.createClass({
-	getInitialState: function() {
-		return {items: [], text: ''};
-	},
-	onChange: function(e) {
-		this.setState({text: e.target.value});
-	},
-	handleSubmit: function(e) {
-		e.preventDefault();
-		var nextItems = this.state.items.concat([this.state.text]);
-		var nextText = '';
-		this.setState({items: nextItems, text: nextText});
-	},
+var IndexPage = React.createClass({
 	render: function() {
 		return (
-			<div>
-				<h3>TODO</h3>
-				<TodoList items={this.state.items} />
-				<form onSubmit={this.handleSubmit}>
-					<input onChange={this.onChange} value={this.state.text} />
-					<button>{'Add #' + (this.state.items.length + 1)}</button>
-				</form>
-				<Timer />
+			<div className="route-index">
+				<div className="banner-container">
+					<video autoplay muted loop className="banner-video">
+						<source src="/banner_video.mp4" type="video/mp4" />
+						Your browser does not support the video tag.
+					</video>
+
+					<div className="row center banner-content">
+						<h1 className="header center orange-text">Let's go "sightseeing"</h1>
+
+						<div className="banner-buttons">
+							<a href="http://materializecss.com/getting-started.html" className="btn-large waves-effect waves-light orange">Use Current Location</a>
+							<Link to="/select-location/map" className="btn-large waves-effect">Select Location</Link>
+						</div>
+					</div>
+				</div>
 			</div>
 		);
 	}
 });
 
-module.exports = TodoApp;
+module.exports = IndexPage;

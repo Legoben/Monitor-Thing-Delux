@@ -2,15 +2,13 @@ var React = window.React = require('react'),
 	ReactDOM = require("react-dom");
 
 // node in ui where the communism is cadsgfakl;k;
-var theThingHolderMajig = $("#app")[0];
+var theThingHolderMajig = $("#app-container")[0];
 
 // import various paginas
 var IndexPagina = require("./pagina/index");
 
 var SelectLocation = require("./pagina/selectLocation");
 var SelectLocationOnMap = require("./pagina/selectLocationOnMap");
-
-var PostmatesPrompt = require("./pagina/postmatesPrompt");
 
 var ListATMs = require("./pagina/listATMs");
 var ATMDetail = require("./pagina/ATMDetail");
@@ -29,7 +27,6 @@ ReactDOM.render((
 		<Route path="/select-location" component={SelectLocation}>
 			<Route path="/select-location/map" component={SelectLocationOnMap} />
 		</Route>
-		<Route path="/postmates-tools" component={PostmatesPrompt} />
 
 		<Route path="/atms" component={ListATMs}>
 			<Route path="/atm/:atmId" component={ATMDetail} />
