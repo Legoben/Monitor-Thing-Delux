@@ -10,13 +10,13 @@ var IndexPage = React.createClass({
 		return (
 			<div className="route-index">
 				<div className="banner-container">
-					<video autoplay muted loop className="banner-video">
+					<video autoPlay muted loop className="banner-video" poster="/images/banner_video_poster.jpg">
 						<source src="/banner_video.mp4" type="video/mp4" />
 						Your browser does not support the video tag.
 					</video>
 
 					<div className="row center banner-content">
-						<h1 className="header center orange-text">Let's go "sightseeing"</h1>
+						<h1 className="header center">Let's go "sightseeing"</h1>
 
 						<div className="banner-buttons">
 							<a href="http://materializecss.com/getting-started.html" className="btn-large waves-effect waves-light orange">Use Current Location</a>

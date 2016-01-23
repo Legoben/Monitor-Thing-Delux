@@ -58,7 +58,7 @@ div.route-index {
 		left: 50%;
 		z-index: 1;
 		transform: translate(-50%, -50%);
-		
+
 		height: 100% !important;
 		width: auto !important;
 	}
@@ -81,9 +81,12 @@ div.route-index {
 	}
 
 	h1 {
-		text-shadow: 0px 0px 50px #333;
+		text-shadow:0px 0px 3px #000, 
+					0px 0px 50px rgba(0, 0, 0, 0.66);
 
 		font-weight: 700;
+
+		color: #eee;
 	}
 
 	@media all and (min-width: 360px) {
