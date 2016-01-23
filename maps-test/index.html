@@ -19,18 +19,22 @@
 
 <body>
     <div id="map"></div>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script type="text/javascript">
         var map;
         var points;
         var markers;
-        
-        function round(n){
-            return Math.round( n * 1000) / 1000
+        var directionsService;
+        var directionsDisplay;
+
+        function round(n) {
+            return Math.round(n * 1000) / 1000
         }
 
         function initMap(latlon) {
+            directionsService = new google.maps.DirectionsService;
+            directionsDisplay = new google.maps.DirectionsRenderer;
             
             console.log("HERE", latlon)
             map = new google.maps.Map(document.getElementById('map'), {
@@ -40,22 +44,30 @@
                 },
                 zoom: 12
             });
+
+            directionsDisplay = new google.maps.DirectionsRenderer({
+                map: map
+            });
         }
-        
-        function getLocation(){
-            navigator.geolocation.getCurrentPosition(function(loc){
+
+        function getLocation() {
+            navigator.geolocation.getCurrentPosition(function(loc) {
                 console.log(loc);
                 var latlon = [round(loc.coords.latitude), round(loc.coords.longitude)]
                 latlon = [38.9283, -77.1753]
                 initMap(latlon)
                 getWaypoints(latlon)
             });
-            
+
         }
 
         function getWaypoints(latlon) {
-            var j = {"lat":latlon[0], "lng":latlon[1], "event":"getatmdata"}
-            
+            var j = {
+                "lat": latlon[0],
+                "lng": latlon[1],
+                "event": "getatmdata"
+            }
+
             $.ajax({
                 url: "https://pennapps.ngrok.io/command",
                 method: "POST",
@@ -65,22 +77,42 @@
                 success: function(json) {
                     //Do things with the data
                     console.log(json);
-                    if(json.length == 0){
+                    if (json.length == 0) {
                         alert("No ATMs FOUND!")
                         return;
                     }
-                    
-                    for(var i = 0; i < json.length; i++){
-                        var marker = new google.maps.Marker({position: json[i].geocode, map: map, title: json[i].name});   
+
+                    var wps = []
+                    for (var i = 0; i < json.length; i++) {
+                        /*var marker = new google.maps.Marker({
+                            position: json[i].geocode,
+                            map: map,
+                            title: json[i].name
+                        });*/
+
+                        wps.push({
+                            "stopover": true,
+                            "location": json[i].geocode})
                     }
                     
+                    
+                    var request = {
+                        origin: {"lat": latlon[0], "lng": latlon[1]},
+                        destination: {"lat": latlon[0], "lng": latlon[1]},
+                        travelMode: google.maps.TravelMode.DRIVING,
+                        waypoints: wps,
+                        optimizeWaypoints: true,
+                    };
+                    
+                    directionsService.route(request, function(response, status) {
+                        if (status === google.maps.DirectionsStatus.OK) {
+                            directionsDisplay.setDirections(response);
+                            console.log("Yo fam, we good")    
+                        } else { console.log("uh oh") }
+
+                    });
                 }
-           
-            });
-        }
-        
-        function genRandomWaypoints(latlon){
-            
+            })
         }
 
     </script>

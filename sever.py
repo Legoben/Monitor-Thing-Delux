@@ -49,7 +49,7 @@ class MainHandler(web.RequestHandler):
                     atm['reviews'].append({"rating":r['rating'], "comment":r["comment"]})
                 obj.append(atm)
 
-            self.write(json.dumps(obj[:19]))
+            self.write(json.dumps(obj[:6]))
 
         elif j['event'] == "submitreview":
             #sent: comment, rating, atm_id
