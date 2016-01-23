@@ -1,2 +1,8 @@
-app/platforms/*
 conf.json
+robbr-phonegap/platforms/*
+robbr-phonegap/www/
+dist/
+.sass-cache/
+node_modules/
+.sass-cache
+
