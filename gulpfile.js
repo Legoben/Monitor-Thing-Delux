@@ -13,7 +13,7 @@ var source = require('vinyl-source-stream'),
 
     sourceFile = './app/scripts/app.js',
 
-    destFolder = './dist/scripts',
+    destFolder = './robbr-phonegap/www/scripts',
     destFileName = 'app.js';
 
 var browserSync = require('browser-sync');
@@ -26,7 +26,7 @@ gulp.task('moveCss',['clean'], function(){
   // the base option sets the relative root for the set of files,
   // preserving the folder structure
   gulp.src(['./app/styles/**/*.css'], { base: './app/styles/' })
-  .pipe(gulp.dest('dist/styles'));
+  .pipe(gulp.dest('robbr-phonegap/www/styles'));
 });
 
 gulp.task('sass', function() {
@@ -36,7 +36,7 @@ gulp.task('sass', function() {
             loadPath: ['app/bower_components']
         })
         .pipe($.autoprefixer('last 1 version'))
-        .pipe(gulp.dest('dist/styles'))
+        .pipe(gulp.dest('robbr-phonegap/www/styles'))
         .pipe($.size());
 });
 
@@ -72,7 +72,7 @@ gulp.task('buildScripts', function() {
     return browserify(sourceFile)
         .bundle()
         .pipe(source(destFileName))
-        .pipe(gulp.dest('dist/scripts'));
+        .pipe(gulp.dest('robbr-phonegap/www/scripts'));
 });
 
 
@@ -82,7 +82,7 @@ gulp.task('buildScripts', function() {
 gulp.task('html', function() {
     return gulp.src('app/*.html')
         .pipe($.useref())
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('robbr-phonegap/www/'))
         .pipe($.size());
 });
 
@@ -94,7 +94,7 @@ gulp.task('images', function() {
             progressive: true,
             interlaced: true
         })))
-        .pipe(gulp.dest('dist/images'))
+        .pipe(gulp.dest('robbr-phonegap/www/images'))
         .pipe($.size());
 });
 
@@ -104,14 +104,14 @@ gulp.task('fonts', function() {
     return gulp.src(require('main-bower-files')({
             filter: '**/*.{eot,svg,ttf,woff,woff2}'
         }).concat('app/fonts/**/*'))
-        .pipe(gulp.dest('dist/fonts'));
+        .pipe(gulp.dest('robbr-phonegap/www/fonts'));
     
 });
 
 // Clean
 gulp.task('clean', function(cb) {
     $.cache.clearAll();
-    cb(del.sync(['dist/styles', 'dist/scripts', 'dist/images']));
+    cb(del.sync(['robbr-phonegap/www/styles', 'robbr-phonegap/www/scripts', 'robbr-phonegap/www/images']));
 });
 
 // Bundle
@@ -120,7 +120,7 @@ gulp.task('bundle', ['styles', 'scripts', 'bower'], function() {
         .pipe($.useref.assets())
         .pipe($.useref.restore())
         .pipe($.useref())
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('robbr-phonegap/www/'));
 });
 
 gulp.task('buildBundle', ['styles', 'buildScripts', 'moveLibraries', 'bower'], function() {
@@ -128,7 +128,7 @@ gulp.task('buildBundle', ['styles', 'buildScripts', 'moveLibraries', 'bower'], f
         .pipe($.useref.assets())
         .pipe($.useref.restore())
         .pipe($.useref())
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('robbr-phonegap/www/'));
 });
 
 // Move JS Files and Libraries
@@ -136,7 +136,7 @@ gulp.task('moveLibraries',['clean'], function(){
   // the base option sets the relative root for the set of files,
   // preserving the folder structure
   gulp.src(['./app/scripts/**/*.js'], { base: './app/scripts/' })
-  .pipe(gulp.dest('dist/scripts'));
+  .pipe(gulp.dest('robbr-phonegap/www/scripts'));
 });
 
 
@@ -145,7 +145,7 @@ gulp.task('bower', function() {
     gulp.src('app/bower_components/**/*.js', {
             base: 'app/bower_components'
         })
-        .pipe(gulp.dest('dist/bower_components/'));
+        .pipe(gulp.dest('robbr-phonegap/www/bower_components/'));
 
 });
 
@@ -153,13 +153,13 @@ gulp.task('json', function() {
     gulp.src('app/scripts/json/**/*.json', {
             base: 'app/scripts'
         })
-        .pipe(gulp.dest('dist/scripts/'));
+        .pipe(gulp.dest('robbr-phonegap/www/scripts/'));
 });
 
 // Robots.txt and favicon.ico
 gulp.task('extras', function() {
     return gulp.src(['app/*.txt', 'app/*.ico'])
-        .pipe(gulp.dest('dist/'))
+        .pipe(gulp.dest('robbr-phonegap/www/'))
         .pipe($.size());
 });
 
@@ -173,7 +173,7 @@ gulp.task('watch', ['html', 'fonts', 'bundle'], function() {
         // Note: this uses an unsigned certificate which on first access
         //       will present a certificate warning in the browser.
         // https: true,
-        server: ['dist', 'app']
+        server: ['robbr-phonegap/www/', 'app']
     });
 
     // Watch .json files
@@ -192,10 +192,10 @@ gulp.task('watch', ['html', 'fonts', 'bundle'], function() {
 
 // Build
 gulp.task('build', ['html', 'buildBundle', 'images', 'fonts', 'extras'], function() {
-    gulp.src('dist/scripts/app.js')
+    gulp.src('robbr-phonegap/www/scripts/app.js')
         .pipe($.uglify())
         .pipe($.stripDebug())
-        .pipe(gulp.dest('dist/scripts'));
+        .pipe(gulp.dest('robbr-phonegap/www/scripts'));
 });
 
 // Default task
