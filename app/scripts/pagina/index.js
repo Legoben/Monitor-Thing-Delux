@@ -3,6 +3,8 @@
 var React = require('react');
 var Timer = require("../ui/Timer");
 
+var Link = require('react-router').Link
+
 // create the things
 var TodoList = React.createClass({
 	render: function() {
