@@ -70,7 +70,9 @@ var ATMList = React.createClass({
 					<div className="col s12">
 						{this.state.atms.map(function(result, idx){
 							return (
-								<ATMCard key={idx} atm={result} />
+								<div className="col s12 m12">
+									<ATMCard key={idx} atm={result} />
+								</div>
 							);
 						})}
 					</div>
