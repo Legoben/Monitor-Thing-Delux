@@ -130,12 +130,6 @@ var ATMList = React.createClass({
 			<div className="container route-atm-list">
 				<div className="row">
 					<div className="col s12">
-						<h3>ATM List !!!</h3>
-					</div>
-				</div>
-
-				<div className="row">
-					<div className="col s12">
 						{this.state.atms.map(function(result, idx){
 							return (
 								<div className="col s12 m12">
