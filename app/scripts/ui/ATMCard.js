@@ -7,7 +7,7 @@ var ATMCard = React.createClass({
 	render: function() {
 		return (
 			<div className="container">
-
+				{this.props.atm.name}
 			</div>
 		);
 	}
