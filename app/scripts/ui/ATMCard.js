@@ -38,10 +38,16 @@ var ATMReview = React.createClass({
 
 // view for rendering ATM card
 var ATMCard = React.createClass({
-	// calculate the average thing
-	componentWillReceiveProps: function(newProperties) {
+	getInitialState: function() {
+		return {
+			imageUrl: "url",
+			avgRating: 0,
+			hasReviews: false
+		};
+	},
+	componentDidMount: function() {
 		// calculate the average of the star ratings
-		var reviews = newProperties.reviews;
+		var reviews = this.props.atm.reviews;
 		var numReviews = 0, runningAvg = 0;
 
 		for(review in reviews) {
@@ -49,7 +55,12 @@ var ATMCard = React.createClass({
 			numReviews++;
 		}
 
+		// get street view url
+		var latlng = this.props.atm.latlon;
+		var url = "https://maps.googleapis.com/maps/api/streetview?size=2000x2000&location="+latlng[0]+","+latlng[1]+"&fov=90&key=AIzaSyD61mHJfiQ6Nu9YJsOvfNRwJ1J98Xjl0Ts"
+
 		this.setState({
+			imageUrl: url,
 			avgRating: (runningAvg / numReviews),
 			hasReviews: (reviews.length != 0)
 		});
@@ -59,7 +70,7 @@ var ATMCard = React.createClass({
 		return (
 			<div className="card hoverable card-item card-atm-overview" data-atm-id={this.props.atm.id}>
 				<div className="card-image waves-effect waves-block waves-light">
-					<img className="activator" src="images/defaultATM.jpg" draggable="false" />
+					<img className="activator" src={ this.state.imageUrl } draggable="false" />
 				</div>
 				<div className="card-content">
 					<span className="card-title activator grey-text text-darken-4">
@@ -72,10 +83,10 @@ var ATMCard = React.createClass({
 					<div className="atm-amount">
 						<span>${this.props.atm.amount_left}</span>
 					</div>
-					<If test={this.props.hasReviews}>
+					<If test={this.state.hasReviews}>
 						<span className="card-title">
 							<div className="rating">
-								<StarRating rating={ this.props.avgRating } total={5} />
+								<StarRating rating={ this.state.avgRating } total={5} />
 							</div>
 						</span>
 					</If>
