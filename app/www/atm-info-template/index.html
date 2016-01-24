@@ -35,7 +35,7 @@
   <!-- <div style="display:flex;justify-content:center;align-items:center;width:100%;">Text Content</div> -->
 
     <div class="col s12" style="display:flex;justify-content:center;align-items:center;width:100%;">
-        <div class="card hoverable" id="card-item">
+        <div class="card hoverable card-item">
             <div class="card-image waves-effect waves-block waves-light">
                 <img class="activator" src="images/defaultATM.jpg" draggable="false">
             </div>
@@ -120,6 +120,7 @@
         </div>
         </div>
   </div>
+ 
   <div class="row">
     <div class="col s12" style="display:flex;justify-content:center;align-items:center;">
         <a class="waves-effect waves-light btn-large" style="color:white; font-weight:200;"><i class="material-icons right">send</i>Calculate Route</a>
@@ -133,8 +134,8 @@
   <script>
     $(function(){
       // Bind the swipeHandler callback function to the swipe event on div.box
-      $( "#card-item" ).on( "swiperight", swipeRight );
-      $( "#card-item" ).on("swipeleft", swipeLeft );
+      $( ".card-item" ).on( "swiperight", swipeRight );
+      $( ".card-item" ).on("swipeleft", swipeLeft );
      
       // Callback function references the event target and adds the 'swipe' class to it
       function swipeRight( event ){
@@ -147,11 +148,11 @@
 
       function swipeLeft( event ){
         // $( event.target ).css("background-color", "red");
-        $( event.target ).closest("#card-item").addClass("animated");
-        $( event.target ).closest("#card-item").addClass("fadeOutLeft");
+        $( event.target ).closest(".card-item").addClass("animated");
+        $( event.target ).closest(".card-item").addClass("fadeOutLeft");
         // $(event.target).animate({width:'toggle'},350).delay(1000);
         setTimeout(function() {
-          $(event.target).closest("#card-item").remove();
+          $(event.target).closest(".card-item").remove();
         }, 600);
       }
 
