@@ -69,13 +69,18 @@ function initMap(latlon) {
 function toDemo() {
     locmap.setCenter(latlon1);
     if (marker != null) {
-            marker.setMap(null);
-        }
-
-        marker = new google.maps.Marker({
-            position: latlon1,
-            map: locmap,
-            title: 'My location'
-        });
-    
+        marker.setMap(null);
     }
+
+    marker = new google.maps.Marker({
+        position: latlon1,
+        map: locmap,
+        title: 'My location'
+    });
+
+}
+
+function getMarkerLoc(){
+    var latlng = {"lat":marker.getPosition().lat(), "lng":marker.getPosition().lng()}
+    return latlng
+}
