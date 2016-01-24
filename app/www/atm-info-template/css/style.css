@@ -16,11 +16,16 @@
     margin: 0 0 100px;
  }
 
+ @media only screen and (min-width: 993px){
+    .container {
+        width: 55.8%;
+ }
+
 .section {
     display: table-row;
+    top: 50%;
     /*
     position: absolute;
-    top: 50%;
     margin-top: -200px;
     left: 0;
     */
