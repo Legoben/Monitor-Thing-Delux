@@ -7,8 +7,6 @@ var Link = require('react-router').Link
 
 // create the things
 var SelectLocation = React.createClass({
-	// mixins: [ History ],
-
 	// when the view is rendered, attempt to get the location.
 	componentDidMount: function() {
 		var history = this.props.history;

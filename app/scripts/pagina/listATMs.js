@@ -85,6 +85,17 @@ var ATMList = React.createClass({
 
 							// remove from DOM
 							target.remove();
+
+							// how many ATMs are left? if it's 6, advance to the map view
+							if(oldThis.state.atms <= 6) {
+								window.ATMs = oldThis.state.atms;
+
+								// navigate to map view
+								oldThis.props.history.replaceState(null, '/atm-list/map'/*, {
+									lat: position.coords.latitude, 
+									lng: position.coords.longitude
+								}*/);
+							}
 						}, 666);
 					});
 				}
