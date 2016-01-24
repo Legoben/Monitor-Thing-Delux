@@ -55,7 +55,7 @@
             navigator.geolocation.getCurrentPosition(function(loc) {
                 console.log(loc);
                 var latlon = [round(loc.coords.latitude), round(loc.coords.longitude)]
-                //latlon = [38.9283, -77.1753]
+                latlon = [38.9283, -77.1753]
                 initMap(latlon)
                 getWaypoints(latlon)
             });
@@ -113,6 +113,19 @@
                     directionsService.route(request, function(response, status) {
                         if (status === google.maps.DirectionsStatus.OK) {
                             directionsDisplay.setDirections(response);
+                            var legs = response.routes[0].legs;
+                            
+                            var dist = 0;
+                            console.log(response);
+                            for(var i=0; i<legs.length; ++i) {
+                                dist += legs[i].distance.value;
+                            }
+                            
+                            total = dist / 1000;
+                            wototal = (dist - legs[legs.length -1].distance.value) / 1000;
+                            
+                            console.log(total, wototal)
+                            
                             console.log("Yo fam, we good")    
                         } else { console.log("uh oh") }
 

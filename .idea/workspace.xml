@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65ff89fb-d882-4a1d-9212-9b23bff09bf1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/www/map-template/resources/index.html" afterPath="$PROJECT_DIR$/app/www/map-template/resources/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps-test/index.html" afterPath="$PROJECT_DIR$/maps-test/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/putindb.py" afterPath="$PROJECT_DIR$/putindb.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/www/map-template/resources/js/init.js" afterPath="$PROJECT_DIR$/app/www/map-template/resources/js/init.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sever.py" afterPath="$PROJECT_DIR$/sever.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/www/map-template/resources/css/style.css" afterPath="$PROJECT_DIR$/app/www/map-template/resources/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Monitor-Thing-Delux.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -19,7 +22,7 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Monitor-Thing-Delux$getall.coverage" NAME="getall Coverage Results" MODIFIED="1453548923200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Monitor-Thing-Delux$sever.coverage" NAME="sever Coverage Results" MODIFIED="1453583240233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Monitor-Thing-Delux$sever.coverage" NAME="sever Coverage Results" MODIFIED="1453600855291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Monitor-Thing-Delux$gen.coverage" NAME="gen Coverage Results" MODIFIED="1453546912302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Monitor-Thing-Delux$putindb.coverage" NAME="putindb Coverage Results" MODIFIED="1453582057268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Monitor-Thing-Delux$gettest.coverage" NAME="gettest Coverage Results" MODIFIED="1453549492450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -36,8 +39,8 @@
       <file leaf-file-name="sever.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sever.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15233415">
-              <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.84766585">
+              <caret line="101" column="62" selection-start-line="101" selection-start-column="62" selection-end-line="101" selection-end-column="62" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -84,8 +87,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.0384617">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state vertical-scroll-proportion="-4.6153846">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -659,8 +662,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.0384617">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state vertical-scroll-proportion="-4.6153846">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -721,8 +724,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sever.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15233415">
-          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.84766585">
+          <caret line="101" column="62" selection-start-line="101" selection-start-column="62" selection-end-line="101" selection-end-column="62" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

@@ -26,11 +26,21 @@ class MainHandler(web.RequestHandler):
         print(resp)
         return resp
 
+    def set_default_headers(self):
+        self.add_header('Access-Control-Allow-Origin', self.request.headers.get('Origin', '*'))
 
+        # You could also add 'GET' here, or any other HTTP methods
+        self.add_header('Access-Control-Request-Method', 'POST')
+
+        # This is needed because Sencha sends the 'X-Requested-With' by default
+        self.add_header('Access-Control-Allow-Headers', 'X-Requested-With')
+
+        self.set_header("Content-Type", "application/json")
 
 
     def post(self, *args, **kwargs):
-        self.set_header("Content-Type", "application/json")
+
+        self.set_header("Access-Control-Allow-Origin", "*")
 
         j = json.loads(self.get_argument("data"))
         print(j)
@@ -87,6 +97,10 @@ class CoordHandler(web.RequestHandler):
     def get(self, *args, **kwargs):
         self.render("maps-test/getcoords.html")
 
+class SelHandler(web.RequestHandler):
+    def get(self, *args, **kwargs):
+        self.render("app/www/map-template/resources/index.html")
+
 
 api_key = conf['nessy_api']
 lat = "38.9283"
@@ -104,6 +118,7 @@ app = web.Application([
     (r"/command", MainHandler),
     (r"/maptest", MapHandler),
     (r"/coordstest", CoordHandler),
+    (r"/seltest", SelHandler),
 ], debug=True)
 
 app.listen(6060)
