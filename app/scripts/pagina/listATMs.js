@@ -4,6 +4,9 @@ var React = require('react');
 
 var Link = require('react-router').Link
 
+// view for rendering ATM card
+var ATMCard = require('../ui/ATMCard')
+
 // create the things
 var ATMList = React.createClass({
 	getInitialState: function() {

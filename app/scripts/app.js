@@ -11,7 +11,7 @@ var SelectLocation = require("./pagina/selectLocation");
 var SelectLocationOnMap = require("./pagina/selectLocationOnMap");
 
 var ListATMs = require("./pagina/listATMs");
-var ATMDetail = require("./pagina/ATMDetail");
+var ATMDestinationMap = require("./pagina/ATMDestinationMap");
 
 var RouteMap = require("./pagina/routeMap");
 
@@ -27,8 +27,7 @@ ReactDOM.render((
 		<Route path="/select-location" component={SelectLocation} />
 		<Route path="/select-location-map" component={SelectLocationOnMap} />
 
-		<Route path="/atms" component={ListATMs}>
-			<Route path="/atm/:atmId" component={ATMDetail} />
-		</Route>
+		<Route path="/atm-list" component={ListATMs} />
+		<Route path="/atm-list/map" component={ATMDestinationMap} />
 	</Router>
 ), theThingHolderMajig)

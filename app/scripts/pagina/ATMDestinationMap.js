@@ -11,7 +11,7 @@ var ATMDetail = React.createClass({
 			<div className="container">
 				<div className="row">
 					<div className="col s12">
-							<h3>ATM List !!! ({this.props.params.atmId})</h3>
+							<h3>lmao map ({this.props.atms})</h3>
 					</div>
 				</div>
 			</div>
