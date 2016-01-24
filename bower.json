@@ -2,10 +2,14 @@
   "name": "swipr",
   "version": "0.0.1",
   "dependencies": {
-    "jquery": "~2.1.1",
-    "materialize": "~0.97.5"
+    "jquery": "^2.2.0",
+    "materialize": "~0.97.5",
+    "jquery-detect-swipe": "^2.1.1"
   },
   "devDependencies": {
-    "jquery-mobile-bower": "^1.4.5"
+    "react-rater": "^0.1.2"
+  },
+  "resolutions": {
+    "jquery": "~2.1.1"
   }
 }

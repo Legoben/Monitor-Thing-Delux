@@ -7,6 +7,11 @@ $secondary-color: #3949ab /*color("indigo", "darken-1")*/;
 
 @import "materialize/sass/materialize";
 
+@import "components/animate";
+
+/* star rating pls */
+@import "react-rater/react-rater.scss";
+
 /* custom styles for all pages */
 nav, div.navbar-fixed {
 	height: $navbar-height-mobile + 10px;
