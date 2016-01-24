@@ -41,7 +41,9 @@ var ATMList = React.createClass({
 			// success handler
 			success: function(r) {
 				// Figure out whether there are any ATMs.
-				var json = r.obj
+				var airport = r.ap;
+
+				var json = r.obj;
 				console.log(json);
 				
 				if (json.length == 0) {
@@ -87,14 +89,18 @@ var ATMList = React.createClass({
 							target.remove();
 
 							// how many ATMs are left? if it's 6, advance to the map view
-							if(oldThis.state.atms <= 6) {
-								window.ATMs = oldThis.state.atms;
+							if(oldThis.state.atms.length <= 6) {
+								window.SavedShit = {
+									"ap": airport,
+									"original": {
+										"lng": parseFloat(queryParams.lng),
+										"lat": parseFloat(queryParams.lat)
+									},
+									"atms": oldThis.state.atms
+								};
 
 								// navigate to map view
-								oldThis.props.history.replaceState(null, '/atm-list/map'/*, {
-									lat: position.coords.latitude, 
-									lng: position.coords.longitude
-								}*/);
+								oldThis.props.history.pushState(null, '/atm-list/map');
 							}
 						}, 666);
 					});
