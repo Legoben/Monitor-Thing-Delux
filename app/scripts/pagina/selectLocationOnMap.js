@@ -6,6 +6,11 @@ var Link = require('react-router').Link
 
 // create the things
 var SelectLocationOnMap = React.createClass({
+	// goes to the home page
+	goToHome: function() {
+		this.props.history.pushState(null, '/');
+	},
+
 	render: function() {
 		return (
 			<div className="container">

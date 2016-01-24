@@ -40,7 +40,7 @@ var ATMReview = React.createClass({
 var ATMCard = React.createClass({
 	getInitialState: function() {
 		return {
-			imageUrl: "url",
+			imageUrl: "images/defaultATM.jpg",
 			avgRating: 0,
 			hasReviews: false
 		};
