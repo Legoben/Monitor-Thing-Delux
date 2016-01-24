@@ -1,0 +1,40 @@
+div.route-select-location {
+	height: 100% !important;
+
+	#map {
+		height: 100%;
+	}
+
+	/* nasty fucking hack */
+	#map {
+		margin-bottom: ($navbar-height-mobile + 10px);
+
+		@media #{$medium-and-up} {
+			margin-top: -($navbar-height + 10px);
+		}
+
+		z-index: 1;
+	}
+
+	.button-container {
+		position: fixed;
+
+		top: $navbar-height + 10px;
+		right: 0px;
+		padding: 12px;
+
+		z-index: 1;
+
+		a {
+			margin-top: 0.33rem;
+		}
+
+		a:not(:last-child) {
+			margin-right: 1.33rem;
+		}
+
+		a:last-child {
+			margin-right: 2rem;
+		}
+	}
+}

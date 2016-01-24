@@ -57,7 +57,7 @@ var ATMCard = React.createClass({
 
 		// get street view url
 		var latlng = this.props.atm.latlon;
-		var url = "https://maps.googleapis.com/maps/api/streetview?size=2000x1000&location="+latlng[0]+","+latlng[1]+"&fov=90&key=AIzaSyD61mHJfiQ6Nu9YJsOvfNRwJ1J98Xjl0Ts"
+		var url = "https://maps.googleapis.com/maps/api/streetview?size=1500x800&location="+latlng[0]+","+latlng[1]+"&fov=90&key=AIzaSyD61mHJfiQ6Nu9YJsOvfNRwJ1J98Xjl0Ts"
 
 		this.setState({
 			imageUrl: url,

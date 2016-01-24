@@ -24,7 +24,7 @@ nav {
 nav {
 	img {
 		margin-top: 10px;
-		height: 40px;
+		height: 42px;
 		width: auto;
 	}
 }
@@ -60,3 +60,4 @@ main {
 @import "components/route-atm-list";
 
 @import "components/route-map";
+@import "components/route-select-location";
