@@ -13,4 +13,21 @@ div.route-map {
 			margin-top: -($navbar-height + 10px);
 		}
 	}
+
+	#distanceThing {
+		position: fixed;
+
+		top: ($navbar-height-mobile + 10px) + 25px;
+		@media #{$medium-and-up} {
+			top: ($navbar-height + 10px) + 25px;
+		}
+
+		right: 25px;
+
+		background: rgba(0, 0, 0, 0.74);
+		border-radius: 3px;
+		
+		padding: 8px 15px;
+		color: #fff
+	}
 }

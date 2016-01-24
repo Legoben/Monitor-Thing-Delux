@@ -38,9 +38,12 @@ var SelectLocationOnMap = React.createClass({
 
 		marker = new google.maps.Marker({
 			position: latlon1,
-			map: SelectLocationOnMap.map,
+			map: map,
 			title: 'My location'
 		});
+
+		// disable btwn
+		$("#btn-accept").removeClass("disabled");
 	},
 
 	// init all the shit (i.e. a map) !!!!
@@ -75,8 +78,8 @@ var SelectLocationOnMap = React.createClass({
 				title: 'My location'
 			});
 
-			// populate yor box/field with lat, lng
-			console.log("Lat=" + lat + "; Lng=" + lng);
+			// disable btwn
+			$("#btn-accept").removeClass("disabled");
 		});
 	},
 
@@ -86,10 +89,10 @@ var SelectLocationOnMap = React.createClass({
 				<div id="map"></div>
 
 				<div className="button-container">
-					<a className="btn-floating btn-large waves-effect" tooltip="Go To Demo" onClick={this.openDemo}><i className="material-icons live_help">add</i></a>
-					<a className="btn-floating btn-large waves-effect waves-light green" tooltip="Accept" onClick={this.acceptUserPoint}><i className="material-icons thumbs_up">accept</i></a>
+					<a className="btn-floating btn-large waves-effect" title="Go To Demo" onClick={this.openDemo}><i className="material-icons">live_help</i></a>
+					<a className="btn-floating btn-large waves-effect waves-light green disabled" id="btn-accept" title="Accept Location" onClick={this.acceptUserPoint}><i className="material-icons">thumb_up</i></a>
 
-					<Link to="/" className="btn-floating btn-large waves-effect waves-light red" tooltip="Cancel"><i className="material-icons not_interested">cancel</i></Link>
+					<Link to="/" className="btn-floating btn-large waves-effect waves-light red" title="Cancel"><i className="material-icons">not_interested</i></Link>
 				</div>
 			</div>
 		);

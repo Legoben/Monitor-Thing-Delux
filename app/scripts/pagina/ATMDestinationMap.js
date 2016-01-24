@@ -98,9 +98,10 @@ var ATMDetail = React.createClass({
 				
 				total = dist / 1000;
 				wototal = (dist - legs[legs.length -1].distance.value) / 1000;
+
+				$("#distanceThing").html(total + 'km (' + wototal + 'km)');
 				
 				console.log(total, wototal);
-				
 				console.log("Yo fam, we good")    
 			} else { console.log("uh oh") }
 		});
@@ -111,6 +112,10 @@ var ATMDetail = React.createClass({
 		return (
 			<div className="route-map">
 				<div id="map"></div>
+
+				<div id="distanceThing" className="" title="Total Distance (excluding to airport)">
+
+				</div>
 			</div>
 		);
 	}
