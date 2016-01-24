@@ -10,18 +10,17 @@ var latlon1 = {
 	lng: -77.1753
 };
 
+var map = null;
+var marker = null;
+
 // create the things
 var SelectLocationOnMap = React.createClass({
-	// map to display
-	map: null,
-	// selected marker
-	marker: null,
 
 	// accepts the user's placed point.
 	acceptUserPoint: function() {
 		// get lat/ln and forward
-		var lat = this.marker.getPosition().lat();
-		var lng = this.marker.getPosition().lng();
+		var lat = marker.getPosition().lat();
+		var lng = marker.getPosition().lng();
 
 
 		this.props.history.replaceState(null, '/atm-list', {
@@ -32,22 +31,21 @@ var SelectLocationOnMap = React.createClass({
 
 	// opens a demo window
 	openDemo: function() {
-		this.map.setCenter(latlon1);
-
-		if(this.marker != null) {
-			this.marker.setMap(null);
+		map.setCenter(latlon1);
+		if(marker != null) {
+			marker.setMap(null);
 		}
 
-		this.marker = new google.maps.Marker({
+		marker = new google.maps.Marker({
 			position: latlon1,
-			map: this.map,
+			map: SelectLocationOnMap.map,
 			title: 'My location'
 		});
 	},
 
 	// init all the shit (i.e. a map) !!!!
 	componentDidMount: function() {
-		this.map = new google.maps.Map(document.getElementById('map'), {
+		map = new google.maps.Map(document.getElementById('map'), {
 			center: {
 				"lat": 30.2500,
 				"lng": -97.7500
@@ -57,7 +55,7 @@ var SelectLocationOnMap = React.createClass({
 		});
 
 		// add a click event listener
-		google.maps.event.addListener(this.map, "click", function(event) {
+		google.maps.event.addListener(map, "click", function(event) {
 			var lat = event.latLng.lat();
 			var lng = event.latLng.lng();
 
@@ -67,14 +65,13 @@ var SelectLocationOnMap = React.createClass({
 			};
 
 			// tear down previous marker
-			if(this.marker != null) {
-				this.marker.setMap(null);
+			if(marker != null) {
+				marker.setMap(null);
 			}
 
-			// Show new marker
-			this.marker = new google.maps.Marker({
+			marker = new google.maps.Marker({
 				position: latlon,
-				map: this.map,
+				map: map,
 				title: 'My location'
 			});
 
