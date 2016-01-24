@@ -27,14 +27,18 @@ function geo() {
     });
 }
 
+var latlon1 = {
+    lat: 38.9283,
+    lng: -77.1753
+}
+
 function initMap(latlon) {
-    var latlon = {
-        lat: 38.9283,
-        lng: -77.1753
-    }
+
+
+
 
     locmap = new google.maps.Map(document.getElementById('map'), {
-        center: latlon,
+        center: latlon1,
         zoom: 15
     });
 
@@ -54,10 +58,24 @@ function initMap(latlon) {
         marker = new google.maps.Marker({
             position: latlon,
             map: locmap,
-            title: 'Hello World!'
+            title: 'My location!'
         });
         // populate yor box/field with lat, lng
         console.log("Lat=" + lat + "; Lng=" + lng);
     });
 
 }
+
+function toDemo() {
+    locmap.setCenter(latlon1);
+    if (marker != null) {
+            marker.setMap(null);
+        }
+
+        marker = new google.maps.Marker({
+            position: latlon1,
+            map: locmap,
+            title: 'My location'
+        });
+    
+    }

@@ -97,10 +97,6 @@ class CoordHandler(web.RequestHandler):
     def get(self, *args, **kwargs):
         self.render("maps-test/getcoords.html")
 
-class SelHandler(web.RequestHandler):
-    def get(self, *args, **kwargs):
-        self.render("app/www/map-template/resources/index.html")
-
 
 api_key = conf['nessy_api']
 lat = "38.9283"
@@ -118,7 +114,6 @@ app = web.Application([
     (r"/command", MainHandler),
     (r"/maptest", MapHandler),
     (r"/coordstest", CoordHandler),
-    (r"/seltest", SelHandler),
 ], debug=True)
 
 app.listen(6060)
