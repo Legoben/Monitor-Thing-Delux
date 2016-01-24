@@ -1,7 +1,16 @@
 div.route-map {
 	height: 100% !important;
-	
+
 	#map {
 		height: 100%;
+	}
+
+	/* nasty fucking hack */
+	#map {
+		margin-bottom: ($navbar-height-mobile + 10px);
+
+		@media #{$medium-and-up} {
+			margin-top: -($navbar-height + 10px);
+		}
 	}
 }

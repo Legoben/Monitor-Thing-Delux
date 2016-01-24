@@ -28,6 +28,12 @@ var ATMList = React.createClass({
 			"lng": parseFloat(queryParams.lng)
 		};
 
+		window.SavedShit = {
+			"ap": {},
+			"current-location": {},
+			"obj": []
+		};
+
 		// request ajax
 		$.ajax({
 			url: "https://pennapps.ngrok.io/command",
@@ -57,6 +63,8 @@ var ATMList = React.createClass({
 						atms: json
 					});
 
+					window.SavedShitObj = json;
+
 					// update with swiping pls
 					$(".card-atm-overview").on('swipeleft', function(e) {
 						var target = $(e.target);
@@ -68,35 +76,37 @@ var ATMList = React.createClass({
 
 						setTimeout(function() {
 							// remove from data set
-							var data = oldThis.state.atms;
-							var theATM = $.grep(data, function(e){
-								return e.id == objId;
+							var idx = -1;
+
+							for (var i = window.SavedShitObj.length - 1; i >= 0; i--) {
+								if(objId == window.SavedShitObj[i].id) {
+									console.log("found idx = " + i);
+									
+									idx = i;
+									break;
+								}
+							};
+
+							console.log("idx = " + idx);
+							window.SavedShitObj.splice(idx, 1);
+
+							oldThis.setState({
+								atms: window.SavedShitObj
 							});
-
-							console.log("ATM in question: ");
-							console.log(theATM);
-
-							// remove it from the array
-							var index = data.indexOf(theATM);
-							if (index >= 0) {
-								// if it's in the thing, remove it pls
-								oldThis.setState({
-									atms: update(oldThis.state.atms, {$splice: [[index, 1]]})
-								})
-							}
 
 							// remove from DOM
 							target.remove();
 
-							// how many ATMs are left? if it's 6, advance to the map view
-							if(oldThis.state.atms.length <= 3) {
+							// how many ATMs are left? if it's 4, advance to the map view
+							console.log("number of triangles: " + window.SavedShitObj.length);
+							if(window.SavedShitObj.length <= 4) {
 								window.SavedShit = {
 									"ap": airport,
 									"current-location": {
 										"lng": parseFloat(queryParams.lng),
 										"lat": parseFloat(queryParams.lat)
 									},
-									"obj": oldThis.state.atms
+									"obj": window.SavedShitObj
 								};
 
 								// navigate to map view
