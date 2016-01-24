@@ -81,11 +81,11 @@ var ATMList = React.createClass({
 							for (var i = window.SavedShitObj.length - 1; i >= 0; i--) {
 								if(objId == window.SavedShitObj[i].id) {
 									console.log("found idx = " + i);
-									
+
 									idx = i;
 									break;
 								}
-							};
+							}
 
 							console.log("idx = " + idx);
 							window.SavedShitObj.splice(idx, 1);
