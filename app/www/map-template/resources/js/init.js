@@ -33,9 +33,7 @@ var latlon1 = {
 }
 
 function initMap(latlon) {
-
-
-
+    
 
     locmap = new google.maps.Map(document.getElementById('map'), {
         center: latlon1,
@@ -43,6 +41,8 @@ function initMap(latlon) {
     });
 
     google.maps.event.addListener(locmap, "click", function (event) {
+        document.getElementById("button-start").className = "waves-effect waves-light btn-large";
+        
         var lat = event.latLng.lat();
         var lng = event.latLng.lng();
 
