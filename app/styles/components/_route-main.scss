@@ -1,6 +1,13 @@
 div.route-index {
 	height: 100%;
 
+	/* nasty fucking hack */
+	margin-top: -($navbar-height-mobile + 10px);
+
+	@media #{$medium-and-up} {
+		margin-top: -($navbar-height + 10px);
+	}
+
 	.banner-container {
 		/*border: 2px solid black;*/
 		position: relative;

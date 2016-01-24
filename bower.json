@@ -4,5 +4,8 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "materialize": "~0.97.5"
+  },
+  "devDependencies": {
+    "jquery-mobile-bower": "^1.4.5"
   }
 }

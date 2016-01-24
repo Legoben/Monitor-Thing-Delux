@@ -1,167 +1,152 @@
 <!DOCTYPE html>
 
 <!--
-    HTML > HEAD tags should be rendered unnecessary if dependencies are injected, which should be through gulp's 'inject.js' file. Same with <scripts> that succeed the footer tag.
+		HTML > HEAD tags should be rendered unnecessary if dependencies are injected, which should be through gulp's 'inject.js' file. Same with <scripts> that succeed the footer tag.
 -->
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Starter Template - Materialize</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>Starter Template - Materialize</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script>
-    $(document).bind('mobileinit',function(){
-        $.mobile.changePage.defaults.changeHash = false;
-        $.mobile.hashListeningEnabled = false;
-        $.mobile.pushStateEnabled = false;
-    });
-  </script> 
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-  <link rel="stylesheet" href="css/animate.css" type="text/css" />
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<!-- CSS  -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script>
+		$(document).bind('mobileinit',function(){
+				$.mobile.changePage.defaults.changeHash = false;
+				$.mobile.hashListeningEnabled = false;
+				$.mobile.pushStateEnabled = false;
+		});
+	</script> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo" style="font-weight:300; color:white;">Swipr</a>
-    </div>
-  </nav>
+	<nav class="light-blue lighten-1" role="navigation">
+		<div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo" style="font-weight:300; color:white;">Swipr</a>
+		</div>
+	</nav>
 
-  <div class="row" id="index-banner">
-  <!-- <div style="display:flex;justify-content:center;align-items:center;width:100%;">Text Content</div> -->
+	<div class="row" id="index-banner">
+		<div class="col s12" style="display:flex;justify-content:center;align-items:center;width:100%;">
+			<div class="card hoverable card-item">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="images/defaultATM.jpg" draggable="false">
+				</div>
+				<div class="card-content">
+					<div class="atm-amount">
+						<span>$917,612</span>
+					</div>
+					<span class="card-title activator grey-text text-darken-4">
+						<span class="atm-name">Navy Federal ATM</span>
+						<i class="material-icons right">more_vert</i>
+					</span>
+					<span class="card-title">
+						<div class="rating">
+							<img src="images/star.svg" alt="Star 1">
+							<img src="images/star.svg" alt="Star 2">
+							<img src="images/star.svg" alt="Star 3">
+							<img src="images/star-half.svg" alt="Star 4">
+							<img src="images/star-outline.svg" alt="Star 5">
+						</div>
+					</span>
+					<p>
+						<a href="#">Write a review</a>
+					</p>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4">
+						<span class="review-title">Reviews</span>
+						<i class="material-icons right">close</i>
+					</span>
 
-    <div class="col s12" style="display:flex;justify-content:center;align-items:center;width:100%;">
-        <div class="card hoverable card-item">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="images/defaultATM.jpg" draggable="false">
-            </div>
-            <div class="card-content">
-                <div class="atm-amount">
-                    <span>$917,612</span>
-                </div>
-                <span class="card-title activator grey-text text-darken-4">
-                    <span class="atm-name">Navy Federal ATM</span>
-                    <i class="material-icons right">more_vert</i>
-                </span>
-                <span class="card-title">
-                    <div class="rating">
-                        <img src="images/star.svg" alt="Star 1">
-                        <img src="images/star.svg" alt="Star 2">
-                        <img src="images/star.svg" alt="Star 3">
-                        <img src="images/star-half.svg" alt="Star 4">
-                        <img src="images/star-outline.svg" alt="Star 5">
-                    </div>
-                </span>
-                <p>
-                    <a href="#">Write a review</a>
-                </p>
-            </div>
-            <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">
-                    <span class="review-title">Reviews</span>
-                    <i class="material-icons right">close</i>
-                </span>
-
-                <table class="user-reviews" border="0">
-                    <div class="review">
-                        <tr>
-                            <td class="user-review-name">Anonymous</td>
-                            <td class="user-review-rating">
-                                <img src="images/star-half.svg" alt="Star 1">
-                                <img src="images/star-outline.svg" alt="Star 2">
-                                <img src="images/star-outline.svg" alt="Star 3">
-                                <img src="images/star-outline.svg" alt="Star 4">
-                                <img src="images/star-outline.svg" alt="Star 5">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="user-review-content">"I got arrested."</td>
-                        </tr>
-                    </div>
-                    <div class="review">
-                        <tr>
-                            <td class="user-review-name">Anonymous</td>
-                            <td class="user-review-rating">
-                                <img src="images/star.svg" alt="Star 1">
-                                <img src="images/star.svg" alt="Star 2">
-                                <img src="images/star.svg" alt="Star 3">
-                                <img src="images/star.svg" alt="Star 4">
-                                <img src="images/star.svg" alt="Star 5">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="user-review-content">"I got rich."</td>
-                        </tr>
-                    </div>
-                    <div class="review">
-                        <tr>
-                            <td class="user-review-name">Anonymous</td>
-                            <td class="user-review-rating">
-                                <img src="images/star.svg" alt="Star 1">
-                                <img src="images/star.svg" alt="Star 2">
-                                <img src="images/star-half.svg" alt="Star 3">
-                                <img src="images/star-outline.svg" alt="Star 4">
-                                <img src="images/star-outline.svg" alt="Star 5">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="user-review-content">"My friend got arrested. I got away."</td>
-                        </tr>
-                    </div>
-                </table>
-            </div>
-        </div>
-        </div>
-  </div>
+					<table class="user-reviews" border="0">
+						<div class="review">
+							<tr>
+								<td class="user-review-name">Anonymous</td>
+								<td class="user-review-rating">
+									<img src="images/star-half.svg" alt="Star 1">
+									<img src="images/star-outline.svg" alt="Star 2">
+									<img src="images/star-outline.svg" alt="Star 3">
+									<img src="images/star-outline.svg" alt="Star 4">
+									<img src="images/star-outline.svg" alt="Star 5">
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td class="user-review-content">"I got arrested."</td>
+							</tr>
+						</div>
+						<div class="review">
+							<tr>
+								<td class="user-review-name">Anonymous</td>
+								<td class="user-review-rating">
+									<img src="images/star.svg" alt="Star 1">
+									<img src="images/star.svg" alt="Star 2">
+									<img src="images/star.svg" alt="Star 3">
+									<img src="images/star.svg" alt="Star 4">
+									<img src="images/star.svg" alt="Star 5">
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td class="user-review-content">"I got rich."</td>
+							</tr>
+						</div>
+						<div class="review">
+							<tr>
+								<td class="user-review-name">Anonymous</td>
+								<td class="user-review-rating">
+									<img src="images/star.svg" alt="Star 1">
+									<img src="images/star.svg" alt="Star 2">
+									<img src="images/star-half.svg" alt="Star 3">
+									<img src="images/star-outline.svg" alt="Star 4">
+									<img src="images/star-outline.svg" alt="Star 5">
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td class="user-review-content">"My friend got arrested. I got away."</td>
+							</tr>
+						</div>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
  
-  <div class="row">
-    <div class="col s12" style="display:flex;justify-content:center;align-items:center;">
-        <a class="waves-effect waves-light btn-large" style="color:white; font-weight:200;"><i class="material-icons right">send</i>Calculate Route</a>
-    </div>
-  </div>
+	<div class="row">
+		<div class="col s12" style="display:flex;justify-content:center;align-items:center;">
+				<a class="waves-effect waves-light btn-large" style="color:white; font-weight:200;"><i class="material-icons right">send</i>Calculate Route</a>
+		</div>
+	</div>
 
-  <!--  Scripts-->
-  <!--  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <script>
-    $(function(){
-      // Bind the swipeHandler callback function to the swipe event on div.box
-      $( ".card-item" ).on( "swiperight", swipeRight );
-      $( ".card-item" ).on("swipeleft", swipeLeft );
-     
-      // Callback function references the event target and adds the 'swipe' class to it
-      function swipeRight( event ){
-        console.log("Swiped right");
-        // $( event.target ).addClass("animated");
-        // $( event.target ).addClass("fadeOutRight").delay(2000).remove();
-        // $(event.target).animate({width:'-toggle'},350);
-        // $( event.target ).remove();
-      }
+	<!--  Scripts-->
+	<!--  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
+	<script src="js/materialize.js"></script>
+	<script src="js/init.js"></script>
+	<script>
+		$(function(){
+			// Bind the swipeHandler callback function to the swipe event on div.box
+			$(".card-item").on("swipeleft", swipeLeft);
 
-      function swipeLeft( event ){
-        // $( event.target ).css("background-color", "red");
-        $( event.target ).closest(".card-item").addClass("animated");
-        $( event.target ).closest(".card-item").addClass("fadeOutLeft");
-        // $(event.target).animate({width:'toggle'},350).delay(1000);
-        setTimeout(function() {
-          $(event.target).closest(".card-item").remove();
-        }, 600);
-      }
+			function swipeLeft( event ){
+				$(event.target).closest(".card-item").addClass("animated");
+				$(event.target).closest(".card-item").addClass("fadeOutLeft");
+				setTimeout(function() {
+					$(event.target).closest(".card-item").remove();
+				}, 600);
+			}
 
-      function addDiv(){
-        $("body").append("<div class='box'></div>");
-        // $("div").addClass("box");
-      }
-    });
-  </script>
+			function addDiv(){
+				$("body").append("<div class='box'></div>");
+			}
+		});
+	</script>
 
-  </body>
+	</body>
 </html>
