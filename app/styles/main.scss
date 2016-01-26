@@ -21,6 +21,14 @@ nav {
 	padding-top: 10px;
 }
 
+nav {
+	img {
+		margin-top: 10px;
+		height: 42px;
+		width: auto;
+	}
+}
+
 @media #{$medium-and-up} {
 	nav, div.navbar-fixed {
 		height: $navbar-height + 10px;
@@ -50,3 +58,6 @@ main {
 
 /* custom styling for the atm list route */
 @import "components/route-atm-list";
+
+@import "components/route-map";
+@import "components/route-select-location";

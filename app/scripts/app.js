@@ -28,6 +28,6 @@ ReactDOM.render((
 		<Route path="/select-location-map" component={SelectLocationOnMap} />
 
 		<Route path="/atm-list" component={ListATMs} />
-		<Route path="/atm-list/map" component={ATMDestinationMap} />
+		<Route path="/atm-map" component={ATMDestinationMap} />
 	</Router>
 ), theThingHolderMajig)

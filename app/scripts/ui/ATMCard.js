@@ -40,7 +40,7 @@ var ATMReview = React.createClass({
 var ATMCard = React.createClass({
 	getInitialState: function() {
 		return {
-			imageUrl: "url",
+			imageUrl: "images/defaultATM.jpg",
 			avgRating: 0,
 			hasReviews: false
 		};
@@ -50,14 +50,16 @@ var ATMCard = React.createClass({
 		var reviews = this.props.atm.reviews;
 		var numReviews = 0, runningAvg = 0;
 
-		for(review in reviews) {
+		for (var i = reviews.length - 1; i >= 0; i--) {
+			var review = reviews[i];
+
 			runningAvg += review.rating;
 			numReviews++;
 		}
 
 		// get street view url
 		var latlng = this.props.atm.latlon;
-		var url = "https://maps.googleapis.com/maps/api/streetview?size=2000x2000&location="+latlng[0]+","+latlng[1]+"&fov=90&key=AIzaSyD61mHJfiQ6Nu9YJsOvfNRwJ1J98Xjl0Ts"
+		var url = "https://maps.googleapis.com/maps/api/streetview?size=1500x320&location="+latlng[0]+","+latlng[1]+"&fov=90&key=AIzaSyD61mHJfiQ6Nu9YJsOvfNRwJ1J98Xjl0Ts"
 
 		this.setState({
 			imageUrl: url,
@@ -76,7 +78,7 @@ var ATMCard = React.createClass({
 					<span className="card-title activator grey-text text-darken-4">
 						<span className="atm-name">{this.props.atm.name}</span>
 
-						<If test={this.props.hasReviews}>
+						<If test={this.state.hasReviews}>
 							<i className="material-icons right">more_vert</i>
 						</If>
 					</span>
@@ -102,7 +104,13 @@ var ATMCard = React.createClass({
 						<tbody>
 							{this.props.atm.reviews.map(function(result, idx){
 								return (
-									<ATMReview key={idx} review={result} />
+									<tr className="review">
+										<td className="user-review-name">Anonymous</td>
+										<td className="user-review-rating">
+											<StarRating rating={ result.rating } total={5} />
+											<p>{result.comment}</p>
+										</td>
+									</tr>
 								);
 							})}
 						</tbody>
