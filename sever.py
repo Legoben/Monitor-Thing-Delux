@@ -14,7 +14,16 @@ db = client.get_default_database()
 db.newatms.create_index([("latlon", pymongo.GEO2D)])
 print("Connected")
 
-
+reviews = [
+    {"rating":5, "comment":"This ATM was great, the best haul I've gotten in months."},
+    {"rating":5, "comment":"Ballar ATM, it let our every bill it had in it."},
+    {"rating":5, "comment":"No security, no witnesses. 5/7 would rob again."},
+    {"rating":3, "comment":"Pretty good. Robbed it pretty well. Was not a fan of its surroundings."},
+    {"rating":3, "comment":"Yo, its alright. Can't comment on the quality of the cash I stole either way."},
+    {"rating":1, "comment":"Terrible. I was caught in the act. Thankfully, I had already reserved a getaway Uber."},
+    {"rating":1, "comment":"Awful. There was literally a police car next to it. How was I supposed to rob it?"},
+    {"rating":1, "comment":"ATM was out of cash. Zero dollar profit."},
+]
 
 class MainHandler(web.RequestHandler):
     def getAirport(self, latlon):
@@ -69,20 +78,27 @@ class MainHandler(web.RequestHandler):
             obj = []
             for atm in res:
                 atm.pop("_id", None)
-                atm['reviews'] = []
-                reviews = db.reviews.find({"id":atm["id"]})
-                for r in reviews:
-                    atm['reviews'].append({"rating":r['rating'], "comment":r["comment"]})
+
+                #reviews = db.testr2.find({"aid":atm["id"]})
+                #for r in reviews:
+                #    atm['reviews'].append({"rating":r['rating'], "comment":r["comment"]})
+                #
+                rint = random.randint(1,2)
+                random.shuffle(reviews)
+                atm['reviews'] = reviews[:rint]
+
                 obj.append(atm)
 
             print(obj)
             random.shuffle(obj)
             self.write(json.dumps({"obj":obj[:6], "ap":ap}))
+            #self.write(json.dumps({"obj":obj, "ap":ap}))
 
         elif j['event'] == "submitreview":
             #sent: comment, rating, atm_id
+            print("submitting")
 
-            db.reviews.insert({"id":j['atm_id'], "rating":j['rating'], "comment":j['comment']})
+            db.testr2.insert({"aid":j['atm_id'], "rating":j['rating'], "comment":j['comment']})
             self.write("success")
 
             pass
