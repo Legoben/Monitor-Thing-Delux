@@ -3,5 +3,5 @@ COMMIT EXPLANATION:
 Github only shows one commit for Pavan Gollapalli, totaling one line of code. 
 In reality, my email was not set correctly: after running git config --global user.
 email "pavankgollapalli@gmail.com", it started tracking my commits from then on.
-None of my previous commits were tracked. In reality, I had several commits on the 
+None of my previous commits were tracked. I had several commits on the 
 frontend; go to the files in the app/www directory to see my specific commits.
